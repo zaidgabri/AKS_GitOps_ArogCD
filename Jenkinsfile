@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("opa80dockerid")
+       app = docker.build("algabrizaid/opa80dockerid")
     }
 
     stage('Test image') {
@@ -32,3 +32,12 @@ node {
                 build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
 }
+
+
+// sudo groupadd docker
+
+// sudo usermod -aG docker $USER
+
+// newgrp docker 
+
+// sudo chmod 666 /var/run/docker.sock
